@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Casa.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Prueba Casa</h1>
+    <script type="text/javascript">
+      const casa = new Casa('1100 Fake St., San Francisco CA, USA', 2, false);
+      document.write("</br>Casa direccion  : " + casa.address);
+      document.write("</br>Casa cant. pisos: " + casa.floors);
+      document.write("</br>");
+      document.write("</br>Se seteo los pisos a 3");
+      casa.setFloors(3)
+      document.write("</br>La casa tiene ahora "+casa.getFloors()+" pisos")
+    </script>
+  </body>
+</html>
