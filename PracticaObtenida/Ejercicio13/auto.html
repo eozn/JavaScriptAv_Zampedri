@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Auto.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Prueba con auto</h1>
+    <script type="text/javascript">
+      const subaru = new Auto( 'Subaru', 'Outback', 2005, 'Grey' );
+      document.write("</br>Auto marca : " + subaru.make);
+      document.write("</br>Auto modelo: " + subaru.model);
+      document.write("</br>Auto año   : " + subaru.year);
+      document.write("</br>Auto color : " + subaru.color);
+      document.write("</br>");
+      document.write("</br>Se setea el color a rojo");
+      subaru.setColor( 'Red' );
+      document.write("</br>Auto color : " + subaru.color);
+    </script>
+  </body>
+</html>
