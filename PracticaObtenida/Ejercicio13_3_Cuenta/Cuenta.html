@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Cuenta.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Prueba cuenta</h1>
+    <script type="text/javascript">
+      const cuenta = new Cuenta(111111, 2000);
+
+      document.write("</br>La cuenta "+cuenta.getNumero()+" tiene saldo: "+cuenta.getSaldo());
+      document.write("</br>");
+
+      document.write("</br>Se acredita 1500")
+      cuenta.acreditar(1500);
+      document.write("</br>La cuenta "+cuenta.getNumero()+" tiene saldo: "+cuenta.getSaldo());
+
+      document.write("</br>");
+      document.write("</br>Se debita 999")
+      cuenta.debitar(999);
+      document.write("</br>La cuenta "+cuenta.getNumero()+" tiene saldo: "+cuenta.getSaldo());
+    </script>
+  </body>
+</html>

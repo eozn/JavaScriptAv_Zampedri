@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Cuenta.js" charset="utf-8"></script>
+    <script src="CajaDeAhorro.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Prueba CA</h1>
+    <script type="text/javascript">
+      const cajaDeAhorro = new CajaDeAhorro(333333, 5000, 4.5);
+
+      document.write("</br>La cuenta "+cajaDeAhorro.getNumero()+" tiene saldo: "+cajaDeAhorro.getSaldo());
+      document.write("</br>");
+
+      document.write("</br>Se debita 1000")
+      cajaDeAhorro.debitar(1000);
+      document.write("</br>La cuenta "+cajaDeAhorro.getNumero()+" tiene saldo: "+cajaDeAhorro.getSaldo());
+
+      document.write("</br>");
+      document.write("</br>Se debita 6000 (debe devolver mensaje saldo no disponible)")
+      cajaDeAhorro.debitar(6000);
+      document.write("</br>La cuenta "+cajaDeAhorro.getNumero()+" tiene saldo: "+cajaDeAhorro.getSaldo());
+    </script>
+  </body>
+</html>
