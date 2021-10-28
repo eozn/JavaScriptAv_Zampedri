@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Casa.js" charset="utf-8"></script>
+    <script src="Mansion.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Prueba Marilyn Mansion</h1>
+    <script type="text/javascript">
+      const mansion = new Mansion('Hollywood CA, USA', 6, 'Brad Pitt');
+      document.write("</br>Mansion direccion  : " + mansion.address);
+      document.write("</br>Mansion cant. pisos: " + mansion.floors);
+      document.write("</br>Mansion habita     : " + mansion.dwells);
+      document.write("</br>");
+      document.write("</br>Se setea habitante");
+      mansion.setDwells("Eduardo Zampedri");
+      document.write("</br>Mansion habita     : " + mansion.dwells);
+    </script>
+  </body>
+</html>
