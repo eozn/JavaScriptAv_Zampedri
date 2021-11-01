@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Cuenta.js" charset="utf-8"></script>
+    <script src="CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Prueba CC</h1>
+    <script type="text/javascript">
+      const cuentaCorriente = new CuentaCorriente(333333, 5000, 3000);
+
+      document.write("</br>La cuenta "+cuentaCorriente.getNumero()+" tiene saldo: "+cuentaCorriente.getSaldo());
+      document.write("</br>");
+
+      document.write("</br>Se debita 1000")
+      cuentaCorriente.debitar(1000);
+      document.write("</br>La cuenta "+cuentaCorriente.getNumero()+" tiene saldo: "+cuentaCorriente.getSaldo());
+
+      document.write("</br>");
+      document.write("</br>Se debita 6000")
+      cuentaCorriente.debitar(6000);
+      document.write("</br>La cuenta "+cuentaCorriente.getNumero()+" tiene saldo: "+cuentaCorriente.getSaldo());
+    </script>
+  </body>
+</html>

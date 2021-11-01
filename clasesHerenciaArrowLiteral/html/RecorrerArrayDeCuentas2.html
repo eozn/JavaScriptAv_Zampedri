@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recorrer una coleccion de cuentas</title>
+    <script src="../clases/js/Cuenta.js" charset="utf-8"></script>
+    <script src="../clases/js/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Vamos a recorrer una coleccion de cuentas</h1>
+
+    <script type="text/javascript">
+      let cuentas = new Array(new CajaDeAhorro(1,100,10),
+                              new CuentaCorriente(2,2000,1000),
+                              new CajaDeAhorro(3,150,2.3),
+                              new CuentaCorriente(4,2500,3000),
+                              new CuentaCorriente(5,2700,2500)  );
+
+      cuentas.forEach((cuenta, i) =>
+      {
+        document.write(`<br/><br/> cuenta[${i}] ${cuenta}`)
+      });
+
+      document.write("<br/><br/>-------------------------------------------------<br/><br/>")
+      document.write("Cuentas con saldo < 2500")
+      cuentas.filter(cuenta=>cuenta.saldo < 2500).forEach((cuenta, i) =>
+      {
+        document.write(`<br/><br/> cuenta[${i}] ${cuenta}`)
+      });
+
+      document.write("<br/><br/>-------------------------------------------------<br/><br/>")
+      document.write("Cuentas con saldo > 2400 despues de restarle 100")
+      cuentasAux=cuentas.filter(cuenta=>cuenta.saldo > 2400)
+      cuentasAux.forEach((cuenta, i) =>
+      {
+        cuentasAux[i].debitar(100)
+        document.write(`<br/><br/> cuenta[${i}] ${cuenta}`)
+      });
+
+      document.write("<br/><br/>-------------------------------------------------<br/><br/>")
+      document.write("Mostrar todas las cuentas luego de debitarse 500")
+      cuentas.forEach((cuenta, i) =>
+      {
+        cuentas[i].debitar(500)
+        document.write(`<br/>cuenta[${i}] ${cuenta} <br/><br/> `)
+      });
+
+      document.write("<br/><br/>-------------------------------------------------<br/><br/>")
+      document.write("Sumarle 5000 a todas las cuentas con saldo > 1500")
+      cuentasAux=cuentas.filter(cuenta=>cuenta.saldo < 1500)
+      cuentasAux.forEach((cuenta, i) =>
+      {
+        cuentas[i].acreditar(5000)
+        document.write(`<br/><br/> cuenta[${i}] ${cuenta}`)
+      });
+
+      document.write("<br/><br/>-------------------------------------------------<br/><br/>")
+      document.write("Mostrar todas las cuentas y la suma de sus saldos")
+      var sumaSaldos = 0.0
+      cuentas.forEach((cuenta, i) =>
+      {
+        sumaSaldos += cuentas[i].getSaldo()
+        document.write(`<br/><br/> cuenta[${i}] ${cuenta}`)
+      });
+      document.write("<br/><br/> La suma de los saldos es: "+sumaSaldos)
+    </script>
+  </body>
+</html>
