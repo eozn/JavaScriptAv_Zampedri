@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculo de superficie y perimetro</title>
+    <script src="../clasesFigura.js/Figura.js" charset="utf-8"></script>
+    <script src="../clasesFigura.js/Circulo.js" charset="utf-8"></script>
+    <script src="../clasesFigura.js/Cuadrado.js" charset="utf-8"></script>
+    <script src="../clasesFigura.js/Rectangulo.js" charset="utf-8"></script>
+    <script src="../clasesFigura.js/Triangulo.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Figuras: Calculo de perimetro y area</h1>
+    <script type="text/javascript">
+      const figura = new Array(new Circulo("Circulo1", 10),
+                             new Circulo("Circulo2", 6),
+                             new Circulo("Circulo3", 100),
+                             new Cuadrado("Cuadrado1", 3),
+                             new Cuadrado("Cuadrado2", 600),
+                             new Cuadrado("Cuadrado3", 9),
+                             new Rectangulo("Rectangulo1", 2, 4),
+                             new Rectangulo("Rectangulo2", 300, 600),
+                             new Rectangulo("Rectangulo3", 4, 8),
+                             new Triangulo("Triangulo1", 2, 4),
+                             new Triangulo("Triangulo2", 365, 663),
+                             new Triangulo("Triangulo3", 4, 8));
+
+      document.write("<br/><br/>3) Mostrar array de figuras")
+      figura.forEach((item, i) =>
+      {
+        document.write(`<br/><br/> figura[${i}] ${item}`)
+      });
+
+      try
+      {
+        document.write("<br/><br/>-----------------------------------------")
+        document.write("<br/><br/>4) Superficie > 100")
+        superficie=figura.filter(fig => fig.calcularSuperficie() > 100)
+        superficie.forEach((figura, i) =>
+        {
+          document.write(`<br/><br/> figura[${i}] ${figura}`)
+        });
+
+        document.write("<br/><br/>-----------------------------------------")
+        document.write("<br/><br/>5) Perimetro < 150")
+        perimetro=figura.filter(fig => fig.calcularPerimetro() < 150)
+        perimetro.forEach((figura, i) =>
+        {
+          document.write(`<br/><br/> figura[${i}] ${figura}`)
+        });
+
+        document.write("<br/><br/>-----------------------------------------")
+        document.write("<br/><br/>6) La mayor superficie")
+        superficieMax=0
+        superficieMin=999999999999999
+        indexMax=0
+        indexMin=0
+        for (var i = 0; i < figura.length; i++)
+        {
+          superficieAux=figura[i].calcularSuperficie()
+          if (superficieMax<superficieAux)
+          {
+              superficieMax=superficieAux
+              indexMax=i
+          }
+          if (superficieMin>superficieAux)
+          {
+            superficieMin=superficieAux
+            indexMin=i
+          }
+        }
+        document.write(`<br/><br/> figura[${indexMax}] ${figura[indexMax]} <br/>Superficie:${superficieMax}`)
+
+        document.write("<br/><br/>-----------------------------------------")
+        document.write("<br/><br/>7) La menor superficie")
+        document.write(`<br/><br/> figura[${indexMin}] ${figura[indexMin]} <br/>Superficie:${superficieMin}`)
+
+        document.write("<br/><br/>-----------------------------------------")
+        document.write("<br/><br/>8) Mostrar 1ro, 3ro y 5to elemento con destructuring")
+        const[a,,b,,c,,,,,,,,]=figura;
+        document.write(`<br/><br/> 1er figura ${a}`)
+        document.write(`<br/><br/> 3er figura ${b}`)
+        document.write(`<br/><br/> 5ta figura ${c}`)
+      }
+      catch (e)
+      {
+        document.write("<br/><br/>"+e)
+      }
+    </script>
+  </body>
+</html>

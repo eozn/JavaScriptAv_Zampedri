@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Iterator And Generators</h1>
+    <script type="text/javascript">
+      // Using an iterator
+      let it = createIterator( [ 'Hello', 'World' ] );
+      document.write(it.next())
+      // Expected output: { value: 'Hello', done: false }
+      document.write(it.next())
+      // Expected output: { value: 'World' , done: false }
+      document.write(it.next())
+      // Expected output: { value: undefined, done: true }
+    </script>
+  </body>
+</html>
