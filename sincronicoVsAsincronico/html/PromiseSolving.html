@@ -6,8 +6,6 @@
   </head>
   <body>
     <script type="text/javascript">
-    try
-    {
       const myPromise = new Promise((resolve, reject) =>
       {
           console.log('Starting asynchronous work!');
@@ -21,15 +19,6 @@
       myPromise.then(value => console.log(`then=${value}`));
       myPromise.catch(err => console.log(`catch=${err}`));
       myPromise.finally(value => console.log( 'finally=Finally!' ));
-    }
-    catch (e)
-    {
-      console.log(`<br/><br/><br/>El error es=${e.message}`)
-    }
-    //finally
-    //{
-    //  console.log('finally del try')
-    //}
     </script>
   </body>
 </html>
