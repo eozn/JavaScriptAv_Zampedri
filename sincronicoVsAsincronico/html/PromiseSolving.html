@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    try
+    {
+      const myPromise = new Promise((resolve, reject) =>
+      {
+          console.log('Starting asynchronous work!');
+          setTimeout(() =>
+          {
+            //resolve('Done!');
+            //reject(new Error('Promise was resolved!'));
+            reject('Promise was resolved!');
+          }, 1000);
+      });
+      myPromise.then(value => console.log(`then=${value}`));
+      myPromise.catch(err => console.log(`catch=${err}`));
+      myPromise.finally(value => console.log( 'finally=Finally!' ));
+    }
+    catch (e)
+    {
+      console.log(`<br/><br/><br/>El error es=${e.message}`)
+    }
+    //finally
+    //{
+    //  console.log('finally del try')
+    //}
+    </script>
+  </body>
+</html>

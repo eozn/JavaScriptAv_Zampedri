@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Asincronico</h1>
+    <script type="text/javascript">
+      setTimeout( () =>
+      {
+        for( let i = 0; i < 2000000000; i++ ) {}
+        document.write( '<br/>Done delaying' );
+      }, 0 );
+
+      setTimeout( () => { document.write( '<br/><br/>Done!' ) }, 0 );
+    </script>
+  </body>
+</html>

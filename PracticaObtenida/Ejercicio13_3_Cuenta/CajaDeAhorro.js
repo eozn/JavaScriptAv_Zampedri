@@ -28,4 +28,10 @@ class CajaDeAhorro extends Cuenta
       this.saldo -= saldo;
     }
   }
+
+  toString()
+  {
+    return super.toString() +
+          "<br/>interes="+this.interes;
+  }
 }

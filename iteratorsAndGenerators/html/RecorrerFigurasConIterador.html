@@ -1,0 +1,39 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recorrer cuentas con iterador</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Figura.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Circulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Cuadrado.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Rectangulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Triangulo.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Se muestra Figuras con iterador</h1>
+    <script type="text/javascript">
+      const arrayFiguras = new Array(new Circulo("Circulo1", 10),
+                               new Circulo("Circulo2", 6),
+                               new Circulo("Circulo3", 100),
+                               new Cuadrado("Cuadrado1", 3),
+                               new Cuadrado("Cuadrado2", 600),
+                               new Cuadrado("Cuadrado3", 9),
+                               new Rectangulo("Rectangulo1", 2, 4),
+                               new Rectangulo("Rectangulo2", 300, 600),
+                               new Rectangulo("Rectangulo3", 4, 8),
+                               new Triangulo("Triangulo1", 2, 4),
+                               new Triangulo("Triangulo2", 365, 663),
+                               new Triangulo("Triangulo3", 4, 8));
+
+    let it=createIterator(arrayFiguras);
+    var obj=it.next();
+    var contador=0;
+
+    while(!obj.done)
+    {
+        document.write(`<br/><br/>Cuenta[${contador++}]${obj.value}`);
+        obj=it.next();
+    }
+    </script>
+  </body>
+</html>

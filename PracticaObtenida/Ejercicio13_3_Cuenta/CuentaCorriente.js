@@ -28,4 +28,10 @@ class CuentaCorriente extends Cuenta
       this.saldo -= importe;
     }
   }
+
+  toString()
+  {
+    return super.toString() +
+           "<br/>descubierto=" + this.descubierto; 
+  }
 }

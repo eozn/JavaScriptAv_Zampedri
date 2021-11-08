@@ -35,4 +35,9 @@ class Cuenta
   {
     this.saldo -= saldo;
   }
+
+  toString(){
+    return `<br/>numero= ${this.numero}
+            <br/>saldo = ${this.saldo}`;
+  }
 }
