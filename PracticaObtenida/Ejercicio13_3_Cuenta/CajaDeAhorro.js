@@ -22,6 +22,7 @@ class CajaDeAhorro extends Cuenta
     {
       document.write("</br>");
       document.write("</br>CA: Saldo no disponible");
+      new Error(`Saldo insuficiente`)
     }
     else
     {
