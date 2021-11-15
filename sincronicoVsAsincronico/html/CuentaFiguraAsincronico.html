@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+    <script src="../../PracticaObtenida/Ejercicio13_3_Cuenta/Cuenta.js" charset="utf-8"></script>
+    <script src="../../PracticaObtenida/Ejercicio13_3_Cuenta/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../../PracticaObtenida/Ejercicio13_3_Cuenta/CuentaCorriente.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Figura.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Circulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Cuadrado.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Rectangulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/clasesFigura.js/Triangulo.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let arrayCuentas =new Array(new CajaDeAhorro(1,1000,2.3),
+                                  new CuentaCorriente(2,2000,1000),
+                                  new CajaDeAhorro(3,3000, 5.2),
+                                  new CuentaCorriente(4,5000,3000),
+                                  new CajaDeAhorro(5,1500, 3.3),
+                                  new CuentaCorriente(6,2500,1300));
+      const arrayFiguras = new Array(new Circulo("Circulo1", 10),
+                           new Circulo("Circulo2", 6),
+                           new Circulo("Circulo3", 100),
+                           new Cuadrado("Cuadrado1", 3),
+                           new Cuadrado("Cuadrado2", 600),
+                           new Cuadrado("Cuadrado3", 9),
+                           new Rectangulo("Rectangulo1", 2, 4),
+                           new Rectangulo("Rectangulo2", 300, 600),
+                           new Rectangulo("Rectangulo3", 4, 8),
+                           new Triangulo("Triangulo1", 2, 4),
+                           new Triangulo("Triangulo2", 365, 663),
+                           new Triangulo("Triangulo3", 4, 8));
+
+      fn_MostrarArray(()=>
+      {
+        document.write("<br/><br/> 13) punto C ***************Todas las cuentas************");
+        arrayCuentas.forEach((cuenta, i) =>
+        {
+          document.write(`<br/><br/>Cuenta[${i}] ${cuenta}`);
+        });
+      }, 30);
+
+      fn_MostrarArray(()=>
+      {
+        document.write("<br/><br/> 13) punto D ***************Todas las figuras************");
+        arrayFiguras.forEach((figura, i) =>
+        {
+          document.write(`<br/><br/>Cuenta[${i}] ${figura}`);
+        });
+      }, 45);
+
+      fn_MostrarArray(()=>
+      {
+        document.write("<br/><br/> 13) punto E ***************Cuentas saldo mayores a 1500************");
+        arrayCuentas.filter(cuenta => cuenta.saldo > 1500).forEach((cuenta, i) =>
+        {
+          document.write(`<br/><br/>cuenta[${i}]
+                          <br/>cuenta=${cuenta}`);
+        });
+
+      }, 15);
+
+      fn_MostrarArray( ()=> {
+            document.write("<br/><br/> 13) punto F ***************Figuras superficie mayor a 50************")
+            arrayFiguras.filter(figura => figura.calcularSuperficie() > 50).forEach((figura, i) =>
+            {
+                        document.write(`<br/><br/>figura[${i}]
+                                        <br/>figura=${figura}`);
+            });
+        }, 90);
+
+        fn_MostrarArray( ()=> {
+            document.write("<br/><br/> 13) punto G ***************Figuras perimetro menor a 100************")
+            arrayFiguras.filter (figura => figura.calcularPerimetro() < 100).forEach((figura, i) =>
+            {
+                document.write(`<br/><br/>figura[${i}]
+                                <br/>figura=${figura}`);
+            });
+        }, 105);
+
+    </script>
+  </body>
+</html>
